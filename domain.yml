@@ -1,0 +1,96 @@
+version: "3.1"
+intents:
+  - اختر_خطوة
+  - طلب_الكود
+  - تأكيد_الخطوة
+entities:
+  - step
+  - slot
+
+responses:
+  utter_اختر_خطوة:
+    - text: "يرجى اختيار إحدى الخطوات التالية:"
+      buttons:
+        - title: "الخطوة 1"
+          payload: "/اختر_خطوة{\"step\": \"1\"}"
+        - title: "الخطوة 2"
+          payload: "/اختر_خطوة{\"step\": \"2\"}"
+        - title: "الخطوة 3"
+          payload: "/اختر_خطوة{\"step\": \"3\"}"
+        - title: "الخطوة 4"
+          payload: "/اختر_خطوة{\"step\": \"4\"}"
+        - title: "الخطوة 5"
+          payload: "/اختر_خطوة{\"step\": \"5\"}"
+        - title: "الخطوة 6"
+          payload: "/اختر_خطوة{\"step\": \"6\"}"
+        - title: "الخطوة 7"
+          payload: "/اختر_خطوة{\"step\": \"7\"}"
+        - title: "الخطوة 8"
+          payload: "/اختر_خطوة{\"step\": \"8\"}"
+    
+  utter_تأكيد_الخطوة:
+    - text: "تم اختيار الخطوة {step} بنجاح ✅"
+
+  
+  # utter_تأكيد_الخطوة:
+  #   - condition:
+  #       - type: slot
+  #         name: step
+  #         value: "1"
+  #     text: "📌 الخطوة الأولى: نحضر أربعة أسلاك من نمط male-female (يوجد دبوس على أحد أطراف السلك)."
+
+  #   - condition:
+  #       - type: slot
+  #         name: step
+  #         value: "2"
+  #     text: "📌 الخطوة الثانية: نصل الأسلاك الأربعة بالدبابيس الخاصة بحساس المسافة."
+
+  #   - condition:
+  #       - type: slot
+  #         name: step
+  #         value: "3"
+  #     text: "📌 الخطوة الثالثة: نصل السلك الأول من طرف اليسار مع منفذ GND على لوحة الآردوينو."
+
+  #   - condition:
+  #       - type: slot
+  #         name: step
+  #         value: "4"
+  #     text: "📌 الخطوة الرابعة: نصل السلك الأول من اليمين مع منفذ 5V على لوحة الآردوينو."
+
+  #   - condition:
+  #       - type: slot
+  #         name: step
+  #         value: "5"
+  #     text: "📌 الخطوة الخامسة: نصل السلك الثاني من اليمين مع المنفذ رقم 12 على لوحة الآردوينو."
+
+  #   - condition:
+  #       - type: slot
+  #         name: step
+  #         value: "6"
+  #     text: "📌 الخطوة السادسة: نصل السلك الثاني من اليسار مع المنفذ رقم A0 على لوحة الآردوينو."
+
+  #   - condition:
+  #       - type: slot
+  #         name: step
+  #         value: "7"
+  #     text: "📌 الخطوة السابعة: نعيد توصيل محرك السيرفو كما في الخطوات السابقة."
+
+  #   - condition:
+  #       - type: slot
+  #         name: step
+  #         value: "8"
+  #     text: "📌 الخطوة الثامنة: نقوم بكتابة الكود البرمجي المطلوب."
+
+  utter_مرحبا:
+    - text: "مرحبًا! 👋 كيف يمكنني مساعدتك اليوم؟"
+
+  utter_وداعا:
+    - text: "إلى اللقاء! 😊 لا تتردد في العودة إذا احتجت أي مساعدة."
+
+  utter_طلب_الكود:
+    - text: "📝 إليك الكود الذي تحتاجه للتحكم في الروبوت:\n```cpp\n#include <Servo.h>\n\nServo myServo;\n\nvoid setup() {\n  pinMode(12, OUTPUT);\n  pinMode(A0, INPUT);\n  myServo.attach(2);\n  Serial.begin(9600);\n\n  while(true) {\n    digitalWrite(12, LOW);\n    delayMicroseconds(2);\n    digitalWrite(12, HIGH);\n    delayMicroseconds(10);\n    digitalWrite(12, LOW);\n    \n    long duration = pulseIn(A0, HIGH);\n    long distance = duration * 0.034 / 2;\n    \n    Serial.print(\"Distance: \");\n    Serial.print(distance);\n    Serial.println(\" cm\");\n\n    if (distance <= 20) {\n      for (int angle = 0; angle <= 90; angle++) {\n        myServo.write(angle);\n        delay(15);\n      }\n      delay(1000);\n      for (int angle = 90; angle >= 0; angle--) {\n        myServo.write(angle);\n        delay(15);\n      }\n    }\n    \n    delay(100);\n  }\n}\n\nvoid loop() {}\n```"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

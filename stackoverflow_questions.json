@@ -1,0 +1,42 @@
+[
+    {
+        "question": "How can I unit test Arduino code?",
+        "link": "https://stackoverflow.com/questions/780819/how-can-i-unit-test-arduino-code"
+    },
+    {
+        "question": "Arduino Sketch upload issue - avrdude: stk500_recv(): programmer is not responding",
+        "link": "https://stackoverflow.com/questions/19765037/arduino-sketch-upload-issue-avrdude-stk500-recv-programmer-is-not-respondi"
+    },
+    {
+        "question": "HTTP vs TCP/IP, send data to a web server",
+        "link": "https://stackoverflow.com/questions/23157817/http-vs-tcp-ip-send-data-to-a-web-server"
+    },
+    {
+        "question": "Mapping a numeric range onto another",
+        "link": "https://stackoverflow.com/questions/5731863/mapping-a-numeric-range-onto-another"
+    },
+    {
+        "question": "How to convert int to string on Arduino?",
+        "link": "https://stackoverflow.com/questions/7910339/how-to-convert-int-to-string-on-arduino"
+    },
+    {
+        "question": "Converting an int or String to a char array on Arduino",
+        "link": "https://stackoverflow.com/questions/7383606/converting-an-int-or-string-to-a-char-array-on-arduino"
+    },
+    {
+        "question": "How do I remove a library from the arduino environment?",
+        "link": "https://stackoverflow.com/questions/16752806/how-do-i-remove-a-library-from-the-arduino-environment"
+    },
+    {
+        "question": "Convert serial.read() into a usable string using Arduino",
+        "link": "https://stackoverflow.com/questions/5697047/convert-serial-read-into-a-usable-string-using-arduino"
+    },
+    {
+        "question": "Arduino Nano - &quot;avrdude: ser_open():system can&#39;t open device &quot;\\\\.\\COM1&quot;: the system cannot find the file specified&quot;",
+        "link": "https://stackoverflow.com/questions/25718779/arduino-nano-avrdude-ser-opensystem-cant-open-device-com1-the-sys"
+    },
+    {
+        "question": "Does Arduino use C or C++?",
+        "link": "https://stackoverflow.com/questions/11812850/does-arduino-use-c-or-c"
+    }
+]
