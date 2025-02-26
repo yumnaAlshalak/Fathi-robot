@@ -1,0 +1,14 @@
+version: "3.1"
+
+stories:
+- story: المستخدم يختار خطوة
+  steps:
+    - intent: اختر_خطوة
+      entities:
+        - step: "1"
+    - action: utter_تأكيد_الخطوة
+
+- story: طلب الكود
+  steps:
+  - intent: طلب_الكود
+  - action: utter_طلب_الكود

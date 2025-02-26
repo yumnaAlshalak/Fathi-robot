@@ -1,0 +1,18 @@
+version: "3.1"
+
+rules:
+
+- rule: رد عند طلب الكود
+  steps:
+  - intent: طلب_الكود
+  - action: utter_طلب_الكود
+
+- rule: ترحيب المستخدم عند البدء
+  steps:
+  - intent: مرحبا
+  - action: utter_مرحبا
+
+- rule: توديع المستخدم
+  steps:
+  - intent: وداعا
+  - action: utter_وداعا
